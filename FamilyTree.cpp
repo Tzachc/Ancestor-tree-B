@@ -99,7 +99,9 @@ Tree& Tree::addMother(string rootName, string newName)
             curr->mother->setParentType("mother");
             curr->mother->setHeight(curr->getHeight()+1);
             curr->mother->setRelation(relation(newName));
+            if(curr->father!= nullptr)
             curr->father->child = curr;
+            if(curr->mother!= nullptr)
             curr->mother->child = curr;
         }
         else
